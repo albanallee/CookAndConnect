@@ -24,19 +24,24 @@ export default {
 }
 </script>
 
-<style scoped lang="less">  
-  h1, h2 {
-    font-weight: normal;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
+<style lang="less">
+body {
+	font-family: sans-serif;
+	text-align: center;
+	padding: 3rem;
+	font-size: 1.125rem;
+	line-height: 1.5;
+  transition: all 725ms ease-in-out;
+  margin: auto;
+  background-color: #FFFEFD;
+}
+h1 {
+	font-size: 2rem;
+	font-weight: bolder;
+	margin-bottom: 1rem;
+}
+p {
+	margin-bottom: 1rem;
+	color: tomato;
+}
 </style>
