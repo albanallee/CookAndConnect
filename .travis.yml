@@ -9,7 +9,7 @@ script: npm run build
 deploy:
  provider: pages
  skip_cleanup: true
- github_token: 5e823d8f06d3ef8dbb30133be59c53f1abafbbc3
+ github_token: GCE_SECRET_KEY
  local_dir: dist
  on:
    branch: master
