@@ -3,18 +3,21 @@
     <h1>{{ name }}</h1>
     <Carousel />
     <Documentation />
+    <ModalPassword />
   </div>
 </template>
 
 <script>
 import Carousel from "@/components/Carousel";
 import Documentation from "@/components/Documentation";
+import ModalPassword from "@/components/ModalPassword";
 
 export default {
   name: 'HomeComponent',
   components: {
     Carousel,
     Documentation,
+    ModalPassword,
   },
   data () {
     return {
