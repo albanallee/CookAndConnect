@@ -2,7 +2,7 @@
   "name": "cookandconnect",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "HAVAS Augustin <ahavas412@gmail.com>",
+  "author": "A2_Ecole404 <contact@ecole404.fr>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
