@@ -7,7 +7,7 @@
                 <li>Connectez-vous sur votre tablette et rendez-vous sur la même page</li>
                 <li>Téléchargez l'appli</li>
             </ul>
-            <a href="/en-savoir-plus">En savoir plus..</a>
+            <router-link to="/en-savoir-plus"><a href="#">En savoir plus..</a></router-link>
         </div>
     </div>
 </template>
