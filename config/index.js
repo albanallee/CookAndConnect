@@ -49,8 +49,8 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'CookAndConnect/CookAndConnect/static',
-    assetsPublicPath: '/',
+    assetsSubDirectory: 'CookAndConnect/static',
+    assetsPublicPath: '/CookAndConnect',
 
     /**
      * Source Maps
