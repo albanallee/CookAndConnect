@@ -18,13 +18,13 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="dashboard-img" :src="~src/assets/slide1.png" />
+                        <img class="dashboard-img" :src="require('@/assets/slide1.png')" />
                     </div>
                     <div class="carousel-item">
                         <img class="dashboard-img" :src="require('@/assets/slide2.png')" />
                     </div>
                     <div class="carousel-item">
-                        <img class="dashboard-img" src="../assets/slide3.png" />
+                        <img class="dashboard-img" :src="require('@/assets/slide3.png')" />
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
