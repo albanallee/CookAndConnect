@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: "/CookAndConnect/"
+    publicPath: "/CookAndConnect/CookAndConnect/"
 };
