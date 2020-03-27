@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="stape">
+        <div class="stape container">
             <h3>Les étapes de téléchargement</h3>
             <ul>
                 <li>Téléchargez l'application en cliquant sur le bouton</li>
@@ -25,6 +25,18 @@ export default {
 
 <style scoped lang="less">
 .stape {
-    margin: 4rem 0rem;
+    margin: 1rem 0rem;
+    > h3 {
+        font-size: 28px;
+        font-weight: normal;
+    }
+    > ul {
+        margin: 1rem 0rem;
+        text-align: left;
+        list-style: circle;
+        > li {
+            font-size: 18px;
+        }
+    }
 }
 </style>

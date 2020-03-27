@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <p>{{ name }}</p>
+    <h1>{{ name }}</h1>
     <Carousel />
     <Documentation />
   </div>
@@ -26,22 +26,19 @@ export default {
 
 <style lang="less">
 body {
-	font-family: sans-serif;
 	text-align: center;
-	padding: 3rem;
 	font-size: 1.125rem;
 	line-height: 1.5;
   transition: all 725ms ease-in-out;
   margin: auto;
   background-color: #FFFEFD;
+  font-family: 'roboto', 'sans-serif';
 }
 h1 {
-	font-size: 2rem;
-	font-weight: bolder;
-	margin-bottom: 1rem;
-}
-p {
-	margin-bottom: 1rem;
-	color: tomato;
+	font-size: 64px;
+  font-weight: normal;
+  padding: 1rem 0rem;
+  background-color: #c4ad99;
+  color: #ecedf1;
 }
 </style>

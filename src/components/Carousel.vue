@@ -1,26 +1,30 @@
 <template>
     <div class="body-wrapper">
-        <div>
-        <h2>Une possibilite de customiser votre application</h2>
-            <p>L'application indispensable pour les cuisines</p>
-            <button>Telecharger l'application</button>
+        <button>Telecharger l'application</button>
+        <div class="description">
+            <p>
+                Créez des recettes par jour, Les cuisiniers auront <strong>les étapes de la recette sur la tablette</strong>.
+                Modifiez en temps réel vos recettes. 
+            </p>
+            <p>
+                L'application Cook&connect va s'occuper de vos <strong>stocks</strong>. Elle peut même vous proposer 
+                une <strong>liste de courses</strong> permanente et simple d'utilisation.
+            </p>
+        </div>
+        <div class="catch-phrase container">
+            <h2>L'application indespensable dans les cuisines</h2>
         </div>
         <div class="image-wrapper">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="dashboard-img" src="/knife-3169323_1920.jpg" />
+                        <img class="dashboard-img" src="../assets/slide1.png" />
                     </div>
                     <div class="carousel-item">
-                        <img class="dashboard-img" src="/bake-599521_1920.jpg" />
+                        <img class="dashboard-img" src="../assets/slide2.png" />
                     </div>
                     <div class="carousel-item">
-                        <img class="dashboard-img" src="/bakery-1868396_1920.jpg" />
+                        <img class="dashboard-img" src="../assets/slide3.png" />
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -52,6 +56,7 @@ export default {
 
 <style lang="less">
 button {
+    margin: 2rem;
 	cursor: pointer;
 	appearance: none;
 	border-radius: 4px;
@@ -60,17 +65,44 @@ button {
 	border: 1px solid #212121;
 	background-color: #fff;
 	color: #212121;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+button:hover {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 .body-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center ;
 }
 .image-wrapper {
-    width: 40%;
+    width: 100%;
     text-align: center;
 }
 .dashboard-img {
     max-width: 100%;
+}
+.description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    > p {
+        padding: 0rem 2rem;
+        font-size:18px;
+        color: #212121;
+        font-weight: normal;
+    }
+}
+.catch-phrase {
+    > h2 {
+        margin:0rem 0rem 1rem 0rem;
+        font-size: 32px;
+        font-weight: 400;
+    }
 }
 </style>
