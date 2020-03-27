@@ -30,7 +30,7 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             Close
           </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary js-send">Save changes</button>
         </div>
       </div>
     </div>
@@ -38,6 +38,25 @@
 </template>
 
 <script>
+// marche pas car modal chargé après js, peut etre avec v-click
+$('button.js-send').click(function () {
+  var apiUrl = "http://bcrypt.org/api/check-password.json";
+  var hash = "$2b$06$GO0I6.PGxkQxeKNuuRraUOvG3HfU2U2AkygikDYVrUpg7Xqo/bbxa";
+  var password = $('input.form-control').text();
+  var datas = {
+    hash: hash,
+    password: password
+  };
+  console.log(datas);
+
+  $.post(apiUrl, datas)
+    .fail(function (e) {
+      console.log('error : '+e);
+    })
+    .done(function(answer) {
+      console.log('correct : '+answer);
+    });
+});
 export default {
   name: "ModalPassword",
   data() {
