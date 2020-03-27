@@ -6,6 +6,9 @@ import router from './router'
 import BootstrapVue from "bootstrap-vue";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "@popperjs/core";
+import "bootstrap/dist/js/bootstrap";
+import "bootstrap-vue/dist/bootstrap-vue";
 
 new Vue({
   el: '#app',
