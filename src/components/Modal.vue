@@ -27,7 +27,8 @@
             <label for="exampleInputPassword1">Mot de passe</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
           </div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <div class="spinner" style="text-align: center;"><img style="display: none; width: 30px; height: auto; text-align: center;" :src="require('@/assets/spinner.gif')" alt="spinner"></div>
+          <button type="button" class="btn btn-secondary close-js" data-dismiss="modal">
             Close
           </button>
           <button type="button" class="btn btn-primary js-send">Save changes</button>
@@ -40,9 +41,10 @@
 <script>
 $(function() {
   $('button.js-send').click(function () {
-    var apiUrl = "https://bcrypt.org/api/check-password.json";
-    var hash = "$2b$06$GO0I6.PGxkQxeKNuuRraUOvG3HfU2U2AkygikDYVrUpg7Xqo/bbxa";
-    var password = $('input.form-control').text();
+    $('div.spinner > img').css('display', 'block');
+    var apiUrl = "https://services.cook-and-connect.aioa.fr/check-password.php";
+    var hash = "$2b$06$75BmGlZVqfTdqM39A7.1OuzdmfJqCaG5hfkeO2760xfLMuVYLupjW";
+    var password = $('input.form-control').val();
     var datas = {
       hash: hash,
       password: password
@@ -52,22 +54,28 @@ $(function() {
     $.ajax({
       url: apiUrl,
       headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST',
           'Content-Type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
       dataType: 'json',
       data: datas,
     }).done(function (response) {
-      console.log('done '+ response);
-    }).fail(function (e) {
-      console.log('error '+ e);
+      $('div.spinner > img').css('display', 'none');
+      console.log(response);
+      if (response.ok) {
+        console.log('ok');
+        $('div.spinner').text('Mot de passe correct !');
+        setTimeout(function() {
+          $('button.close-js').click();
+        }, 1000)
+      } else {
+        $('div.spinner').text('Mot de passe incorrect, réessayez !');
+      }
     });
   });
 });
 export default {
-  name: "ModalPassword",
+  name: "Modal",
   data() {
     return {};
   }
