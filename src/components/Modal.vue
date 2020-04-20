@@ -46,7 +46,8 @@
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>enim eiusmod high life accusamus </p>
+                    <p>Ajout d'une liste de courses pour auto-incrémenter votre liste d'ingédients</p>
+                    <i type="button" href="#" class="icon-cloud-download" style="font-size: 28px;"></i>
                   </div>
                 </div>
               </div>
@@ -60,7 +61,8 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit
+                    <p>Création d'un utilisateur Cuisinier</p>
+                    <i type="button" href="#" class="icon-cloud-download" style="font-size: 28px;"></i>
                   </div>
                 </div>
               </div>
@@ -74,7 +76,8 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    3 wolf moon officia aute
+                    <p>Création de l'application Cook&Connect</p>
+                    <i type="button" href="#" class="icon-cloud-download" style="font-size: 28px;"></i>
                   </div>
                 </div>
               </div>
@@ -207,11 +210,21 @@ button.close {
 .card-body {
   display: flex;
   justify-content: space-between ;
+  align-items: center;
+  > p {
+    margin-bottom: 0;
+    font-size: 16px;
+    margin-right: 3rem;
+    text-align: left;
+  }
 }
 .modal-title-after {
   display: none;
   font-size: 34px;
   color: rgba(black, 0.8);
   padding: 0.4rem 1.5rem;
+}
+.fa-download {
+  content: '\f019';
 }
 </style>
