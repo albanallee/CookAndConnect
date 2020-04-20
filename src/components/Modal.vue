@@ -13,6 +13,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Avant de télécharger votre Application</h5>
+            <h5 class="modal-title-after" id="exampleModalLabel">Choisissez votre Version</h5>
             <button
               type="button"
               class="close exit-js"
@@ -30,7 +31,7 @@
             </div>
             <div class="spinner" style="display: flex; justify-content:center; margin: 1.5rem  0rem;"><span></span><img style="display: none; width: 30px; height: auto; text-align: center;" :src="require('@/assets/spinner.gif')" alt="spinner"></div>
             
-            <input type="submit" class="btn btn-primary js-send"></input>
+            <input type="submit" class="btn-submit-modal btn btn-primary js-send"></input>
           </div>
           <div class="modal-body-after">
             <div class="accordion" id="accordionExample" style="width:100%;">
@@ -38,7 +39,7 @@
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
                     <button class="btn btn-link version-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Version #1
+                      Version 1.2
                     </button>
                   </h5>
                 </div>
@@ -53,7 +54,7 @@
                 <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed version-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Version #2
+                      Version 1.1
                     </button>
                   </h5>
                 </div>
@@ -67,7 +68,7 @@
                 <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed version-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Version #3
+                      Version 1.0
                     </button>
                   </h5>
                 </div>
@@ -116,7 +117,9 @@ $(function() {
           // Enregistrer l'authentification en session ou dans un cookie
           $('button.close-js').click();
           $('.modal-body').css('display', 'none');
+          $('.modal-title').css('display', 'none');
           $('.modal-body-after').css('display', 'flex');
+          $('.modal-title-after').css('display', 'flex');
         }, 1000)
       } else {
         $('div.spinner > span').text('Mot de passe incorrect, réessayez !');
@@ -151,8 +154,16 @@ export default {
 }
 .modal-title {
   font-size: 34px;
-  color: #c4ad99;
+  color: rgba(black, 0.8);
   padding: 0.4rem 1.5rem;
+}
+.btn-submit-modal {
+  background-color:#c4ad99;
+  border-color: #c4ad99;
+  box-shadow: 4px 2px 4px #d1d1d1;
+}
+.btn-submit-modal:hover {
+  box-shadow: 5px 5px 4px #d1d1d1;
 }
 .modal-body {
   > h4 {
@@ -196,5 +207,11 @@ button.close {
 .card-body {
   display: flex;
   justify-content: space-between ;
+}
+.modal-title-after {
+  display: none;
+  font-size: 34px;
+  color: rgba(black, 0.8);
+  padding: 0.4rem 1.5rem;
 }
 </style>
