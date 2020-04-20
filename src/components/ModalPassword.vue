@@ -38,24 +38,33 @@
 </template>
 
 <script>
-// marche pas car modal chargé après js, peut etre avec v-click
-$('button.js-send').click(function () {
-  var apiUrl = "http://bcrypt.org/api/check-password.json";
-  var hash = "$2b$06$GO0I6.PGxkQxeKNuuRraUOvG3HfU2U2AkygikDYVrUpg7Xqo/bbxa";
-  var password = $('input.form-control').text();
-  var datas = {
-    hash: hash,
-    password: password
-  };
-  console.log(datas);
-
-  $.post(apiUrl, datas)
-    .fail(function (e) {
-      console.log('error : '+e);
-    })
-    .done(function(answer) {
-      console.log('correct : '+answer);
+$(function() {
+  $('button.js-send').click(function () {
+    var apiUrl = "https://bcrypt.org/api/check-password.json";
+    var hash = "$2b$06$GO0I6.PGxkQxeKNuuRraUOvG3HfU2U2AkygikDYVrUpg7Xqo/bbxa";
+    var password = $('input.form-control').text();
+    var datas = {
+      hash: hash,
+      password: password
+    };
+    console.log(datas);
+  
+    $.ajax({
+      url: apiUrl,
+      headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST',
+          'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      dataType: 'json',
+      data: datas,
+    }).done(function (response) {
+      console.log('done '+ response);
+    }).fail(function (e) {
+      console.log('error '+ e);
     });
+  });
 });
 export default {
   name: "ModalPassword",
