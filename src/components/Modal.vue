@@ -33,12 +33,50 @@
             <input type="submit" class="btn btn-primary js-send"></input>
           </div>
           <div class="modal-body-after">
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action active">Version 1.4</a>
-              <a href="#" class="list-group-item list-group-item-action">Version 1.3</a>
-              <a href="#" class="list-group-item list-group-item-action">Version 1.2</a>
-              <a href="#" class="list-group-item list-group-item-action">Version 1.1</a>
-              <a href="#" class="list-group-item list-group-item-action disabled">Version 1.0</a>
+            <div class="accordion" id="accordionExample" style="width:100%;">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link version-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Version #1
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>enim eiusmod high life accusamus </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed version-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Version #2
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed version-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Version #3
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    3 wolf moon officia aute
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -137,5 +175,26 @@ button.close {
 .list-group-item.active {
   background-color: #c4ad99;
   border-color: #c4ad99;
+}
+.card-header {
+  padding: 0;
+}
+.version-link {
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  text-align: left;
+  color: #c4ad99;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+.version-link:hover {
+  background-color: rgba(#c4ad99, 0.5);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.card-body {
+  display: flex;
+  justify-content: space-between ;
 }
 </style>
