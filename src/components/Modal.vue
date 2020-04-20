@@ -27,7 +27,7 @@
             <label for="exampleInputPassword1">Mot de passe</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
           </div>
-          <div class="spinner" style="text-align: center;"><img style="display: none; width: 30px; height: auto; text-align: center;" :src="require('@/assets/spinner.gif')" alt="spinner"></div>
+          <div class="spinner" style="display: flex; justify-content:center;"><img style="display: none; width: 30px; height: auto; text-align: center;" :src="require('@/assets/spinner.gif')" alt="spinner"></div>
           <button type="button" class="btn btn-secondary close-js" data-dismiss="modal">
             Close
           </button>
