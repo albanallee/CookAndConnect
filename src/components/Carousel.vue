@@ -1,6 +1,6 @@
 <template>
     <div class="body-wrapper">
-        <button data-toggle="modal" data-target="#exampleModal">Telecharger l'application</button>
+        <button data-toggle="modal" data-target="#exampleModal">Télécharger l'application</button>
         <div class="description">
             <p>
                 Créez des recettes par jour, Les cuisiniers auront <strong>les étapes de la recette sur la tablette</strong>.
