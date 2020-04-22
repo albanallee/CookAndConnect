@@ -15,12 +15,16 @@ import "es6-promise/auto";
 Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
-    password: null,
+    password: undefined,
     isAuthenticated: false
   },
   mutations: {
     setPassword (state, password) {
-      state.password = password;
+      state.password = password
+      state.isAuthenticated = true
+    },
+    destroyPassword (state) {
+      state.password = undefined
     }
   }
 });

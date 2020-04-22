@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ name }}</h1>
+    <Modal />
     <Carousel />
     <Documentation />
-    <Modal />
   </div>
 </template>
 

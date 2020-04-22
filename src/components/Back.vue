@@ -1,6 +1,6 @@
 <template>
     <div style="display: flex;">
-        {{password}}
+        Bam !{{password}}
     </div>
 </template>
 
