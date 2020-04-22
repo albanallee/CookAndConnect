@@ -24,15 +24,16 @@
             </button>
           </div>
           <div class="modal-body">
-            <h4>Merci d'entrer le mot de passe que vous avez reçu par mail</h4>
+            <h4>Merci d'entrer le mot de passe que vous avez reçu par mail -> {{ password }}</h4>
             <div class="form-group d-flex">
               <label class="col-4" for="exampleInputPassword1">Mot de passe</label>
               <input type="password" class="form-control col-8" id="exampleInputPassword1" placeholder="**********">
             </div>
             <div class="spinner" style="display: flex; justify-content:center; margin: 1.5rem  0rem;"><span></span><img style="display: none; width: 30px; height: auto; text-align: center;" :src="require('@/assets/spinner.gif')" alt="spinner"></div>
             
-            <input type="submit" class="btn-submit-modal btn btn-primary js-send"></input>
+            <button type="submit" class="btn-submit-modal btn btn-primary js-send">Valider</button>
           </div>
+          <div class="trigger" @click="setPassword(password, $event)" style="display: none;"></div>
           <div class="modal-body-after">
             <div class="accordion" id="accordionExample" style="width:100%;">
               <div class="card">
@@ -87,13 +88,15 @@
       </div>
     </div>
     <!-- Modal List -->
-    
+    <Back />
   </div>
 </template>
 
 <script>
+import Back from "@/components/Back";
+
 $(function() {
-  $('input.js-send').click(function () {
+  $('button.js-send').click(function () {
     $('div.spinner > img').css('display', 'block');
     var apiUrl = "https://services.cook-and-connect.aioa.fr/check-password.php";
     var hash = "$2b$06$75BmGlZVqfTdqM39A7.1OuzdmfJqCaG5hfkeO2760xfLMuVYLupjW";
@@ -102,6 +105,7 @@ $(function() {
       hash: hash,
       password: password
     };
+    $('div.trigger').click();
   
     // Requête qui vérifie le mot de passe et qui fais les petites animations si le mdp est bon ou pas
     $.ajax({
@@ -139,9 +143,23 @@ $(function() {
   });
 });
 export default {
-  name: "Modal",
+  name: 'Modal',
+  components: {
+    Back,
+  },
   data() {
     return {};
+  },
+  computed: {
+    password () {
+      return this.$store.state.password
+    }
+  },
+  methods: {
+    setPassword(e, password) {
+      console.log(password , e);
+      this.$store.commit('setPassword', password)
+    }
   }
 };
 </script>

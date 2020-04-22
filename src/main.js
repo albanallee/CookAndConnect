@@ -9,10 +9,26 @@ import "bootstrap-vue/dist/bootstrap-vue";
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuex from "vuex";
+import "es6-promise/auto";
+
+Vue.use(Vuex);
+const store = new Vuex.Store({
+  state: {
+    password: null,
+    isAuthenticated: false
+  },
+  mutations: {
+    setPassword (state, password) {
+      state.password = password;
+    }
+  }
+});
 
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
